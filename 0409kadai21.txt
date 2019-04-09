@@ -1,0 +1,23 @@
+<html>
+<body>
+<script>
+	var st;
+	
+	for(var i=0;i<5;i++){
+		for(var j=0;j<5;j++){
+			if(i==3 && j==3){
+			 st += "○";
+			}else if(j==5){
+			 st += "\n";
+			}else{
+			st += "●";
+			}
+		}
+		alert(st+"\n\n");
+		}
+
+</script>
+
+
+</body>
+</html>
