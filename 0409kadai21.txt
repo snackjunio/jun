@@ -18,3 +18,180 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+
+
+
+
+def startday_check(start_day):
+    try:
+        y1 = start_day[0]
+        m1 = start_day[1].lstrip('0')
+        m1 = int(m1)
+        d1 = start_day[2].lstrip('0')
+        d1 = int(d1)
+        if len(y1) == 4:
+            if m1 in range(0, 13):
+               if m1 == 1 :
+                   if d1 in range(0,32):
+                       return d1
+                   else:
+                       raise
+               elif m1 == 2:
+                   if d1 in range(0,29):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 3 :
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 4:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 5:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 6:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 7:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 8:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 9:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 10:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 11:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 12:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+            else:
+                raise
+        else:
+            raise
+    except:
+        raise
+def endday_check(end_day):
+    try:
+        y1 = end_day[0]
+        m1 = end_day[1].lstrip('0')
+        m1 = int(m1)
+        d1 = end_day[2].lstrip('0')
+        d1 = int(d1)
+        if len(y1) == 4:
+            if m1 in range(0, 13):
+               if m1 == 1 :
+                   if d1 in range(0,32):
+                       return d1
+                   else:
+                       raise
+               elif m1 == 2:
+                   if d1 in range(0,29):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 3 :
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 4:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 5:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 6:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 7:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 8:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 9:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 10:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 11:
+                   if d1 in range(0,31):
+                       return d1
+                   else :
+                       raise
+               elif m1 == 12:
+                   if d1 in range(0,32):
+                       return d1
+                   else :
+                       raise
+            else:
+                raise
+        else:
+            raise
+    except:
+        raise
+
+def hikaku(start_day, end_day):
+    try:
+        y1 = int(start_day[0])
+        m1 = int (start_day[1])
+        d1 = int(start_day[2])
+        y2 = int(end_day[0])
+        m2 = int(end_day[1])
+        d2 = int(end_day[2])
+        if y1 <= y2:
+            if m1 <= m2:
+                if d1 <= d2:
+                    print('OK')
+                else:
+                    print('開始日付は終了日付より大きい')
+            else:
+                print('開始日付は終了日付より大きい')
+        else:
+            print('開始日付は終了日付より大きい')
+    except:
+        raise
