@@ -1,197 +1,241 @@
-import day as d
+package jp.co.sunseer.sunlogi.common.bean;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
+import java.io.Serializable;
 
+/**
+ * @className: Ms200_customer
+ * @description: 顧客マスタ
+ * @author: GaoJiaBao
+ * @date: 2020/05/12 9:07
+ **/
+@ApiModel(value = "顧客マスタ")
+public class Ms200Customer implements Serializable {
+    @ApiModelProperty(value = "顧客CD", required = true)
+    private String client_id;
+    @ApiModelProperty(value = "ログインID", required = true)
+    private String login_id;
+    @ApiModelProperty(value = "パスワード", required = true)
+    private String login_pw;
+    @ApiModelProperty(value = "所属顧客CD")
+    private String parent_account_id;
+    @ApiModelProperty(value = "所属顧客グループ")
+    private String customer_cd;
+    @ApiModelProperty(value = "ログイン名")
+    private String login_nm;
+    @ApiModelProperty(value = "メール")
+    private String mail;
+    @ApiModelProperty(value = "使用区分", required = true)
+    private String usekb;
+    @ApiModelProperty(value = "用途", required = true)
+    private String yoto;
+    @ApiModelProperty(value = "通知")
+    private String notice;
+    @ApiModelProperty(value = "salt")
+    private String biko;
+    @ApiModelProperty(value = "備考1")
+    private String biko1;
+    @ApiModelProperty(value = "備考2")
+    private String biko2;
+    @ApiModelProperty(value = "備考3")
+    private String biko3;
+    @ApiModelProperty(value = "備考4")
+    private String biko4;
+    @ApiModelProperty(value = "備考5")
+    private String biko5;
+    @ApiModelProperty(value = "作成者")
+    private String ins_usr;
+    @ApiModelProperty(value = "作成日時")
+    private String ins_date;
+    @ApiModelProperty(value = "更新日時")
+    private String upd_date;
+    @ApiModelProperty(value = "更新者")
+    private String upd_usr;
+    @ApiModelProperty(value = "最終ログイン")
+    private String lst_date;
+    @ApiModelProperty(value = "削除フラグ", required = true)
+    private String del_flg;
 
+    public String getClient_id() {
+        return client_id;
+    }
 
-def main():
-    try:
-        start_day = input('開始日付を入力してください：\n例：2020/03/19\n').split('/')
-        d.startday_check(start_day)
-        end_day = input('開始日付を入力してください：\n例：2020/03/19\n').split('/')
-        d.endday_check(end_day)
-        d.hikaku(start_day, end_day)
+    public void setClient_id(String client_id) {
+        this.client_id = client_id;
+    }
 
+    public String getLogin_id() {
+        return login_id;
+    }
 
-    except:
-        print('エラー')
+    public void setLogin_id(String login_id) {
+        this.login_id = login_id;
+    }
 
-if __name__ == '__main__':
-    main()
+    public String getLogin_pw() {
+        return login_pw;
+    }
 
+    public void setLogin_pw(String login_pw) {
+        this.login_pw = login_pw;
+    }
 
+    public String getParent_account_id() {
+        return parent_account_id;
+    }
 
+    public void setParent_account_id(String parent_account_id) {
+        this.parent_account_id = parent_account_id;
+    }
 
+    public String getCustomer_cd() {
+        return customer_cd;
+    }
 
+    public void setCustomer_cd(String customer_cd) {
+        this.customer_cd = customer_cd;
+    }
 
-def startday_check(start_day):
-    try:
-        y1 = start_day[0]
-        m1 = start_day[1].lstrip('0')
-        m1 = int(m1)
-        d1 = start_day[2].lstrip('0')
-        d1 = int(d1)
-        if len(y1) == 4:
-            if m1 in range(0, 13):
-               if m1 == 1 :
-                   if d1 in range(0,32):
-                       return d1
-                   else:
-                       raise
-               elif m1 == 2:
-                   if d1 in range(0,29):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 3 :
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 4:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 5:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 6:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 7:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 8:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 9:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 10:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 11:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 12:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-            else:
-                raise
-        else:
-            raise
-    except:
-        raise
-def endday_check(end_day):
-    try:
-        y1 = end_day[0]
-        m1 = end_day[1].lstrip('0')
-        m1 = int(m1)
-        d1 = end_day[2].lstrip('0')
-        d1 = int(d1)
-        if len(y1) == 4:
-            if m1 in range(0, 13):
-               if m1 == 1 :
-                   if d1 in range(0,32):
-                       return d1
-                   else:
-                       raise
-               elif m1 == 2:
-                   if d1 in range(0,29):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 3 :
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 4:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 5:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 6:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 7:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 8:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 9:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 10:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 11:
-                   if d1 in range(0,31):
-                       return d1
-                   else :
-                       raise
-               elif m1 == 12:
-                   if d1 in range(0,32):
-                       return d1
-                   else :
-                       raise
-            else:
-                raise
-        else:
-            raise
-    except:
-        raise
+    public String getLogin_nm() {
+        return login_nm;
+    }
 
-def hikaku(start_day, end_day):
-    try:
-        y1 = int(start_day[0])
-        m1 = int (start_day[1])
-        d1 = int(start_day[2])
-        y2 = int(end_day[0])
-        m2 = int(end_day[1])
-        d2 = int(end_day[2])
-        if y1 <= y2:
-            if m1 <= m2:
-                if d1 <= d2:
-                    print('OK')
-                else:
-                    print('開始日付は終了日付より大きい')
-            else:
-                print('開始日付は終了日付より大きい')
-        else:
-            print('開始日付は終了日付より大きい')
-    except:
-        raise
+    public void setLogin_nm(String login_nm) {
+        this.login_nm = login_nm;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public String getUsekb() {
+        return usekb;
+    }
+
+    public void setUsekb(String usekb) {
+        this.usekb = usekb;
+    }
+
+    public String getYoto() {
+        return yoto;
+    }
+
+    public void setYoto(String yoto) {
+        this.yoto = yoto;
+    }
+
+    public String getNotice() {
+        return notice;
+    }
+
+    public void setNotice(String notice) {
+        this.notice = notice;
+    }
+
+    public String getBiko() {
+        return biko;
+    }
+
+    public void setBiko(String biko) {
+        this.biko = biko;
+    }
+
+    public String getBiko1() {
+        return biko1;
+    }
+
+    public void setBiko1(String biko1) {
+        this.biko1 = biko1;
+    }
+
+    public String getBiko2() {
+        return biko2;
+    }
+
+    public void setBiko2(String biko2) {
+        this.biko2 = biko2;
+    }
+
+    public String getBiko3() {
+        return biko3;
+    }
+
+    public void setBiko3(String biko3) {
+        this.biko3 = biko3;
+    }
+
+    public String getBiko4() {
+        return biko4;
+    }
+
+    public void setBiko4(String biko4) {
+        this.biko4 = biko4;
+    }
+
+    public String getBiko5() {
+        return biko5;
+    }
+
+    public void setBiko5(String biko5) {
+        this.biko5 = biko5;
+    }
+
+    public String getIns_usr() {
+        return ins_usr;
+    }
+
+    public void setIns_usr(String ins_usr) {
+        this.ins_usr = ins_usr;
+    }
+
+    public String getIns_date() {
+        return ins_date;
+    }
+
+    public void setIns_date(String ins_date) {
+        this.ins_date = ins_date;
+    }
+
+    public String getUpd_date() {
+        return upd_date;
+    }
+
+    public void setUpd_date(String upd_date) {
+        this.upd_date = upd_date;
+    }
+
+    public String getUpd_usr() {
+        return upd_usr;
+    }
+
+    public void setUpd_usr(String upd_usr) {
+        this.upd_usr = upd_usr;
+    }
+
+    public String getLst_date() {
+        return lst_date;
+    }
+
+    public void setLst_date(String lst_date) {
+        this.lst_date = lst_date;
+    }
+
+    public String getDel_flg() {
+        return del_flg;
+    }
+
+    public void setDel_flg(String del_flg) {
+        this.del_flg = del_flg;
+    }
+
+    public String getCredentialsSalt() {
+        return login_nm + biko + biko;
+    }
+
+}
